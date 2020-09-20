@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>School project!</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+
+</head>
+<body>
+
+	<div class="container my-2">
+		<h1 style="text-align: center">Subjects list</h1>
+		<br>
+		
+		<table border="1" class = "table table-striped table-responsive-md" style = "text-align: center">
+			<thead>
+				<tr>
+					<th>Code</th>
+					<th>Subject</th>
+					<th>Year</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="subj: ${subjectList}">
+					<td th:text="${subj.code}">Code</th>
+					<td th:text="${subj.subject}">Subject</th>
+					<td th:text="${subj.year}">Year</th>
+				</tr>
+			</tbody>
+		</table>
+		
+		<hr>
+		<a th:href = "@{/}"> <- Back to homepage</a>
+	</div>
+
+</body>
+</html>
